@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Select.css'
-const SelectDate = () => {
+const SelectDate = (props) => {
     const [openOption, setOpenOption] = useState(false)
     const [selectedDate, setSelectedDate] = useState('No of Days');
 
@@ -50,14 +50,20 @@ const SelectDate = () => {
                     <li onClick={() => {
                         setSelectedDate('1-7 Days')
                         setOpenOption(!openOption)
+                        props.setMinDurationSearch(1)
+                        props.setMaxDurationSearch(7)
                     }} class="list-group-item">1-7 Days</li>
                     <li onClick={() => {
                         setSelectedDate('8-14 Days')
                         setOpenOption(!openOption)
+                        props.setMinDurationSearch(8)
+                        props.setMaxDurationSearch(14)
                     }} class="list-group-item">8-14 Days</li>
                     <li onClick={() => {
                         setSelectedDate('15+ Days')
                         setOpenOption(!openOption)
+                        props.setMinDurationSearch(15)
+                        props.setMaxDurationSearch(30)
                     }} class="list-group-item">15+ Days</li>
                 </ul>
             </div>

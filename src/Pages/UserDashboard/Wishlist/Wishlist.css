@@ -1,0 +1,49 @@
+.wishlist-table tbody tr {
+    padding: 5px 10px;
+    border-bottom: 1px solid rgb(121, 121, 121);
+}
+
+.wishlist-table table {
+    border: 1px solid rgb(121, 121, 121);
+    padding: 10px;
+}
+
+.wishlist-table thead tr {
+    border-bottom: 1px solid rgb(121, 121, 121);
+    padding: 10px !important;
+    text-align: center;
+}
+
+.wishlist-table tbody td {
+    padding: 20px;
+}
+
+.wishlist-table tr {
+    height: 50px;
+    text-align: center;
+}
+
+.wishlist-image img {
+    width: 100px;
+    height: 100px;
+}
+
+.wishlist-table-btn {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(209, 209, 209);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.wishlist-table-btn .material-symbols-outlined {
+    color: rgb(224, 75, 75);
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}

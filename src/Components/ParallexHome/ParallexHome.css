@@ -8,3 +8,39 @@
     display: grid;
     place-items: center;
 }
+.stats-container {
+    position: relative;
+    top: -70px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+.package-num {
+    transition: --num 3s;
+    counter-set: num var(--num);
+    /* font: 800 40px system-ui; */
+}
+
+.package-num::after {
+    content: counter(num);
+
+}
+
+@keyframes counter {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: 890;
+    }
+}
+
+/* .package-num:hover {} */

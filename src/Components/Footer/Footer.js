@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import logo from '../../image/company/1.webp'
+import { Link, useLocation } from 'react-router-dom';
 import './Footer.css'
 const Footer = () => {
+    const location = useLocation().pathname.slice(1, 5);
+    const [showNav, setShowNav] = useState(true);
+    useEffect(() => {
+        { location === 'user' ? setShowNav(false) : setShowNav(true) }
+    }, [location])
     const moveToTop = () => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
     return (
+        <>
+            {showNav &&
+
         <div className='footer'>
             <div className="pt-5">
                 <div className="container px-md-5 py-5">
@@ -101,6 +110,9 @@ const Footer = () => {
                 </div>
             </div>
         </div>
+            }
+        </>
+
     )
 }
 

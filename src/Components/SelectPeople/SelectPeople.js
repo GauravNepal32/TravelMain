@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Select.css'
-const SelectPeople = () => {
+const SelectPeople = (props) => {
     const [openOption, setOpenOption] = useState(false)
     const [selectedAdultPeople, setSelecteAdultdPeople] = useState(0);
     const [selectedYouthPeople, setSelectedYouthPeople] = useState(0);
@@ -18,6 +18,10 @@ const SelectPeople = () => {
             }
         });
     }, [openOption])
+
+    useEffect(() => {
+        props.setGuestsSearch(selectedPeople)
+    }, [selectedPeople])
 
     useEffect(() => {
         setSelectedPeople(selectedAdultPeople + selectedChildPeople + selectedYouthPeople)
@@ -81,7 +85,7 @@ const SelectPeople = () => {
                             </div>
                             <div className="controller d-flex me-1 p-2">
                                 <div onClick={() => {
-                                    setSelectedYouthPeople(Math.max(selectedYouthPeople - 1))
+                                    setSelectedYouthPeople(Math.max(0, selectedYouthPeople - 1))
 
                                 }} className="sub-container me-3 p-2">-</div>
                                 <div onClick={() => {

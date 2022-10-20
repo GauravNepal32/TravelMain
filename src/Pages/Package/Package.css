@@ -1,0 +1,327 @@
+.package-details-container,
+.day-plan-child,
+.booking-tour-container {
+    background-color: #faf5ee;
+}
+
+.package-details-container {
+    z-index: 10;
+}
+
+.icons-color {
+    color: rgb(206, 73, 73);
+}
+
+.light-text {
+    color: #757783;
+    font-weight: 500;
+}
+
+.package-action-contianer,
+.include-exclude-container {
+    border-style: solid;
+    border-width: 0 0 1px;
+    border-color: #ebe6de;
+}
+
+.review-star span {
+    color: rgb(255, 183, 0);
+    font-size: 18px;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.review-star-half span {
+    color: rgb(255, 183, 0);
+    font-size: 18px;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.secondary-btn {
+    display: flex;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    background-color: #f0f3f6;
+    color: #757783;
+
+}
+
+.added {
+    background-color: #da5252;
+    color: white;
+}
+
+.not-added {
+    background-color: #f0f3f6;
+    color: #757783;
+}
+
+
+
+.secondary-btn:hover {
+    background-color: #e8604c;
+    color: white;
+}
+
+
+.secondary-btn span {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.include-list li,
+.exclude-list li {
+    margin: 15px 0px;
+}
+
+.include-list li::before {
+    font-family: 'Material Icons';
+    content: '\e5ca';
+    margin-right: 10px;
+    color: #e8604c;
+    font-weight: bolder;
+}
+
+.exclude-list li::before {
+    font-family: 'Material Icons';
+    content: '\e5cd';
+    margin-right: 10px;
+    font-weight: bolder;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+    color: #757783;
+}
+
+.icon-text .material-symbols-outlined {
+    margin-right: 10px;
+    color: #e8604c;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.day-plan-child {
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+    transition: all 1s ease;
+
+}
+
+.isOpen .day-plan-child {
+    background-color: transparent;
+    border-style: solid;
+    border-width: 1px 1px 1px;
+    border-color: #ebe6de;
+}
+
+.day-plan-title::after {
+    position: absolute;
+    right: 10px;
+    font-family: "Material Icons" !important;
+    content: "\e5cf" !important;
+    font-size: 24px;
+    font-weight: lighter;
+    margin: auto 0px;
+    transition: all 0.4s ease-in;
+}
+
+
+
+.isOpen .day-plan-title::after {
+    transform: rotate(180deg);
+
+}
+
+.booking-tour-container {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.light-border-top {
+    border-style: solid;
+    border-width: 1px 0 0px;
+    border-color: #ebe6de;
+    padding: 10px 0px;
+}
+
+
+.booking-tour-heading .big-heading {
+    border-left: 2px solid #e8604c;
+}
+
+.react-datepicker-wrapper input,
+.number-of-guest input {
+    padding: 10px;
+    color: #757783;
+    border: none;
+    border-style: solid;
+    border-width: 1px 1px 1px;
+    border-color: #ebe6de;
+    max-width: 130px;
+}
+
+.booking-contact-name-container input {
+    padding: 5px;
+    color: #757783;
+    border: none;
+    border-style: solid;
+    border-width: 1px 1px 1px;
+    border-color: #ebe6de;
+    width: 100%;
+}
+
+.react-datepicker-ignore-onclickoutside {
+    color: #757783;
+    padding: 10px;
+}
+
+.tour-summary-box {
+    border-style: solid;
+    border-width: 1px 1px 1px;
+    border-color: #ebe6de;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.max-guest-number {
+    font-weight: 500;
+}
+
+.review-socres-container {
+    border-style: solid;
+    border-width: 1px 1px 1px;
+    border-color: #ebe6de;
+    border-radius: 10px;
+
+}
+
+.center-item {
+    display: grid;
+    place-content: center;
+    place-items: center;
+}
+
+.progress {
+    background-color: #f5f0ef;
+    margin-top: 5px;
+}
+
+.side-border {
+    border-style: solid;
+    border-width: 0px 0px 0px 1px;
+    border-color: #ebe6de;
+}
+
+.progress-bar {
+    background-color: #e8604c;
+}
+
+.review-wrapper .small-line,
+.post-package-review .small-line {
+    margin-top: 10px;
+    height: 3px;
+    width: 4em;
+    background-color: #e8604c !important;
+
+
+}
+
+.review-wrapper .bg-primary {
+    background-color: #da5252 !important;
+}
+
+.review-child {
+    border-style: solid;
+    border-width: 0 0 1px;
+    border-color: #ebe6de;
+    padding-bottom: 30px;
+}
+
+.review-child .small-line {
+    width: 1em;
+}
+
+.comment-form input,
+.comment-form textarea {
+    background-color: #faf5ee;
+    border: none;
+    padding: 20px 30px;
+}
+
+.star-rating button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0px;
+
+}
+
+.star-rating .on {
+    color: #000;
+}
+
+.star-rating .off {
+    color: #ccc;
+}
+
+.star-rating .material-symbols-outlined {
+    font-size: 18px;
+    color: rgb(255, 183, 0);
+}
+
+.star-rating .on .material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.star-rating-form-child {
+    width: 100px;
+    margin-right: 50px;
+}
+
+.total-score-rating {
+    background-color: #faf5ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    border-radius: 10px;
+}
+
+.golden {
+    color: rgb(255, 183, 0);
+    font-weight: bold;
+}
+
+.include-list ul,
+.exclude-list ul {
+    list-style: none;
+}

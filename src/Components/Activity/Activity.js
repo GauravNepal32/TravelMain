@@ -1,8 +1,23 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import './Select.css'
-const Activity = () => {
+const Activity = (props) => {
     const [openOption, setOpenOption] = useState(false)
     const [selectedActivity, setSelectedActivity] = useState('Activity');
+    const [getActivity, setGetActivity] = useState([]);
+
+    const loadData = async () => {
+        try {
+            const response = await axios.get('http://localhost:8000/api/get-activity')
+            setGetActivity(response.data.data)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    useEffect(() => {
+        loadData();
+    }, [])
 
     useEffect(() => {
         const concernedElement = document.querySelector(".activity-close-click");
@@ -45,31 +60,13 @@ const Activity = () => {
             </div>
             <div className={openOption ? 'select-option-container position-absolute d-block' : 'select-option-container d-none'}>
                 <ul class="list-group">
-                    <li onClick={() => {
-                        { console.log('adventure') }
-                        setSelectedActivity('Adventure')
+                    {getActivity.map((act, index) => (
+                        <li key={index} onClick={() => {
+                            setSelectedActivity(act.name)
                         setOpenOption(!openOption)
-                    }} class="list-group-item">Adventure</li>
-                    <li onClick={() => {
-                        setSelectedActivity('Beach')
-                        setOpenOption(!openOption)
-                    }} class="list-group-item">Beach</li>
-                    <li onClick={() => {
-                        setSelectedActivity('City Tours')
-                        setOpenOption(!openOption)
-                    }} class="list-group-item">City Tours</li>
-                    <li onClick={() => {
-                        setSelectedActivity('Discovery')
-                        setOpenOption(!openOption)
-                    }} class="list-group-item">Discovery</li>
-                    <li onClick={() => {
-                        setSelectedActivity('Cruises')
-                        setOpenOption(!openOption)
-                    }} class="list-group-item">Cruises</li>
-                    <li onClick={() => {
-                        setSelectedActivity('History')
-                        setOpenOption(!openOption)
-                    }} class="list-group-item">History</li>
+                            props.setActivitySearch(act.id)
+                        }} class="list-group-item">{act.name}</li>
+                    ))}
                 </ul>
             </div>
         </div>

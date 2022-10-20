@@ -1,0 +1,26 @@
+.dashboard-container {
+    background-color: #f5f7fa;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.portal-navbar {
+    width: 250px;
+    min-height: 100%;
+    background-color: white;
+    color: rgb(140, 141, 151);
+
+}
+
+.portal-navbar a {
+    color: rgb(140, 141, 151);
+    text-decoration: none;
+}
+
+.dashboard-navbar .navbar-item {
+    color: black;
+}
+
+.text-black {
+    color: black !important;
+}

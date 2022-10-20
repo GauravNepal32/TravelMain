@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.css'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import landing from '../../image/Home/landing.jpg'
 import scene from '../../image/Home/image-12.jpeg'
 import SearchSlider from '../../Components/Slider/SearchSlider'
@@ -12,27 +12,28 @@ import Package from '../../Components/Package/Package'
 import Destination from '../../Components/Destination/Destination'
 import Offer from '../../Components/Offer/Offer'
 import ParallexHome from '../../Components/ParallexHome/ParallexHome'
+import axios from 'axios'
 
 const Home = () => {
+    const [locationSearch, setLocationSearch] = useState('');
+    console.log(locationSearch)
+    const [activitySearch, setActivitySearch] = useState('');
+    const [mindurationSearch, setMinDurationSearch] = useState('');
+    const [maxdurationSearch, setMaxDurationSearch] = useState('');
+    const [guestSearch, setGuestsSearch] = useState('');
+    const navigation = useNavigate();
 
-    const customStyles = {
-        option: (provided, state) => ({
-            ...provided,
-            borderBottom: '1px dotted pink',
-            color: state.isSelected ? 'red' : 'blue',
-            // padding: 20,
-        }),
-        control: () => ({
-            // none of react-select's styles are passed to <Control />
-            width: 200,
-        }),
-        singleValue: (provided, state) => {
-            const opacity = state.isDisabled ? 0.5 : 1;
-            const transition = 'opacity 300ms';
+    const handleSearch = async () => {
+        try {
+            const response = await axios.post('http://localhost:8000/api/searchpackage', { location: locationSearch, activity: activitySearch, min_duration: mindurationSearch, max_duration: maxdurationSearch, guests: guestSearch })
+            console.log(response.data.data)
+            navigation('/searchResult', { state: { result: response.data.data } })
 
-            return { ...provided, opacity, transition };
+        } catch (err) {
+            console.log(err)
         }
     }
+
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },
@@ -57,11 +58,11 @@ const Home = () => {
                                     <div className="col-md-5">
                                         <div className="row row-cols-lg-2 row-cols-1">
                                             <div className="col">
-                                        <Select />
+                                                <Select setLocationSearch={setLocationSearch} />
 
                                             </div>
                                             <div className="col">
-                                        <Activity />
+                                                <Activity setActivitySearch={setActivitySearch} />
 
                                             </div>
                                         </div>
@@ -69,17 +70,16 @@ const Home = () => {
                                     <div className="col-md-5">
                                         <div className="row row-cols-lg-2 row-cols-1">
                                             <div className="col">
-                                                <SelectDate />
-
+                                                <SelectDate setMinDurationSearch={setMinDurationSearch} setMaxDurationSearch={setMaxDurationSearch} />
                                             </div>
                                             <div className="col">
-                                                <SelectPeople />
+                                                <SelectPeople setGuestsSearch={setGuestsSearch} />
 
                                             </div>
                                         </div>
                                     </div>
                                     <div className="col-md-2 d-flex align-items-center pe-0">
-                                        <button className='btn w-100 my-auto search-btn d-flex justify-content-center align-items-center'>
+                                        <button onClick={handleSearch} className='btn w-100 my-auto search-btn d-flex justify-content-center align-items-center'>
                                             <span class="material-symbols-outlined me-2">
                                                 search
                                             </span>

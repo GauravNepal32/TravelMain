@@ -1,0 +1,22 @@
+.booking-table {
+    width: 100%;
+}
+
+.booking-table th {
+    text-align: center;
+}
+
+.booking-table td {
+    text-align: center;
+    padding: 20px 4px;
+}
+
+.booking-table tr {
+    border-bottom: 2px solid rgb(205, 203, 203);
+}
+
+
+
+.booking-table tr:nth-child(even) {
+    background-color: aliceblue;
+}

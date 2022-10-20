@@ -58,7 +58,10 @@ const SearchSlider = () => {
                     slidesToScroll: 1
                 }
             }
-        ]
+        ],
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true
     };
     return (
         <div className="test px-md-0 px-3">
@@ -111,6 +114,16 @@ const SearchSlider = () => {
                             </span>
                         </div>
                         <div className="card-name">Hiking</div>
+                    </div>
+                </div>
+                <div>
+                    <div className="search-card mx-auto">
+                        <div className="icons-container">
+                            <span class="material-symbols-outlined">
+                                beach_access
+                            </span>
+                        </div>
+                        <div className="card-name">Beach</div>
                     </div>
                 </div>
             </Slider>

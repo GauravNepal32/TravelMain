@@ -1,0 +1,86 @@
+.search-card {
+    width: 250px;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    height: 200px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 20px;
+    background-color: white;
+    margin: 20px 20px;
+}
+
+.icons-container {
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(241, 159, 159);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.icons-container:hover {
+
+    background-color: rgb(203, 45, 45);
+
+}
+
+
+
+.search-card .icons-container span {
+    font-size: 40px;
+    color: white;
+}
+
+.search-card {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.slick-next {
+    right: 30px;
+    background-color: white !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+    display: none !important;
+    z-index: 3 !important;
+
+
+}
+
+.slick-next::before {
+    color: rgb(203, 45, 45) !important;
+    font-family: "Material Icons" !important;
+    content: "\e5cc" !important;
+}
+
+.slick-prev::before {
+    color: rgb(203, 45, 45) !important;
+    font-family: "Material Icons" !important;
+    content: "\e5cb" !important;
+}
+
+.slick-prev {
+    left: 30px;
+    background-color: white !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+    display: none !important;
+    z-index: 3 !important;
+}
+
+.test:hover .slick-next,
+.test:hover .slick-prev {
+    display: block !important;
+
+}
+
+.package-image-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
