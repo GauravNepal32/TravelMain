@@ -8,7 +8,6 @@ export const AuthProvider = ({ children }) => {
         JSON.parse(sessionStorage.getItem('login')) ?? false
     )
     const [user, setUser] = useState(null);
-    // const baseURL="https://newmotifapi.elscript.co"
     const baseURL = "http://localhost:8000"
     const login = (user) => {
         setUser(user);
